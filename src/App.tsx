@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Login from "pages/Login";
 import Users from "pages/Users";
 import Home from "pages/Home";
 
 const App = () => {
+
+  const getToken = () => {
+    const token = JSON.parse(sessionStorage.getItem('token') || '');
+  }
+
+  useEffect(() => {
+    getToken();
+    return () => {}
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>

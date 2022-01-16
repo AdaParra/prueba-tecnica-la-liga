@@ -9,6 +9,6 @@ export const loginWith = async function(email: string, password: string): Promis
 
     if(response?.ok){
         const { token } = await response.json();
-        console.log(token);
+        sessionStorage.setItem('token', JSON.stringify(token));
     }
 }
