@@ -1,10 +1,18 @@
 import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Login from "pages/Login";
+import Users from "pages/Users";
+import Home from "pages/Home";
 
 const App = () => {
   return (
-    <div>
-      <p>Prueba técnica de LaLiga</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/users" element={<Users />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
