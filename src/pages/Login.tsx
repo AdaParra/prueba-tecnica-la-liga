@@ -8,11 +8,7 @@ export default function Login() {
     
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const response = await loginWith(email, password);
-        if(response?.ok){
-            const { token } = await response.json();
-            console.log(token);
-        }
+        await loginWith(email, password);
     }
 
     return (
