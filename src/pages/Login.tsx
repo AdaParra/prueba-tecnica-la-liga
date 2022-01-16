@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import authentication from '../api/index';
+import { loginWith } from '../api/index';
 
 export default function Login() {
 
@@ -8,7 +8,7 @@ export default function Login() {
     
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const response = await authentication(email, password);
+        const response = await loginWith(email, password);
         if(response?.ok){
             const { token } = await response.json();
             console.log(token);

@@ -1,4 +1,4 @@
-async function authentication(email: string, password: string) {
+export const loginWith = async function(email: string, password: string) {
     const responseApi = await fetch(`https://reqres.in/api/login`, {
       method: 'POST',
       headers: {
@@ -8,5 +8,3 @@ async function authentication(email: string, password: string) {
     });
     return responseApi;
 }
-
-export default authentication;
