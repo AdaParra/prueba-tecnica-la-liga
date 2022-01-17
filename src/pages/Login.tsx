@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { loginWith } from '../api/index';
 
 export default function Login() {
-
     const [email, setEmail] = useState('eve.holt@reqres.in');
     const [password, setPassword] = useState('cityslicka');
     
