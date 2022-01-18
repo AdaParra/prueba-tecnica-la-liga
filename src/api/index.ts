@@ -12,3 +12,14 @@ export const loginWith = async function(email: string, password: string): Promis
         sessionStorage.setItem('token', JSON.stringify(token));
     }
 }
+
+export const getUsers = async function (page: number) {
+  const response = await fetch(`https://reqres.in/api/users?page=${page}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    });
+    const userList = await response.json();
+    return userList;
+}

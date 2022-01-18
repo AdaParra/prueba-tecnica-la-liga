@@ -1,14 +1,38 @@
-const initialState = {
-    userList: [],
+interface User {
+    avatar: string,
+    email: string,
+    first_name: string
+    id: number,
+    last_name: string
+}
+
+export interface UserList {
+    data: Array<User>,
+    page: number,
+    per_page: number,
+    total: number,
+    total_pages: number
 };
 
-export const userList = (state = initialState, action) => {
+const initialState: UserList = {
+    data: [],
+    page: 0,
+    per_page: 0,
+    total: 0,
+    total_pages: 0
+};
+
+export const reducerUserList = (state: UserList = initialState, action) => {
     switch (action.type) {
     case 'USER_LIST': {
-        const userList = action.payload;
+        const { data, page, per_page, total, total_pages } = action.payload;
         return {
             ...state,
-            userList
+            data,
+            page,
+            per_page,
+            total,
+            total_pages
         }
     }
     default:
