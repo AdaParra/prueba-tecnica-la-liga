@@ -1,6 +1,6 @@
-import { User } from "../types/User";
+import { User } from "./User";
 
-export interface RootState {
+export interface UsersInformation {
     data: Array<User>;
     page: number;
     per_page: number;

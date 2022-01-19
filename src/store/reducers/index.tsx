@@ -1,6 +1,6 @@
-import { RootState } from "../RootState";
+import { UsersInformation } from "../../types/UsersInformation";
 
-const initialState: RootState = {
+const initialState: UsersInformation = {
     data: [],
     page: 0,
     per_page: 0,
@@ -8,7 +8,7 @@ const initialState: RootState = {
     total_pages: 0
 };
 
-export const reducerUserList = (state: RootState = initialState, action) => {
+export const reducerUserList = (state: UsersInformation = initialState, action) => {
     switch (action.type) {
     case 'USER_LIST': {
         const { data, page, per_page, total, total_pages } = action.payload;
