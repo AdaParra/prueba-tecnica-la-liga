@@ -22,6 +22,5 @@ export const getUsers = async function (numberOfPages: number): Promise<UsersInf
         'Content-Type': 'application/json'
       },
     });
-    const userList = await response.json();
-    return userList;
+    return await response.json();
 }
