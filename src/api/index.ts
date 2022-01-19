@@ -13,8 +13,8 @@ export const loginWith = async function(email: string, password: string): Promis
     return response.status;
 }
 
-export const getUsers = async function (page: number) {
-  const response = await fetch(`https://reqres.in/api/users?page=${page}`, {
+export const getUsers = async function (numberOfPages: number) {
+  const response = await fetch(`https://reqres.in/api/users?page=${numberOfPages}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
