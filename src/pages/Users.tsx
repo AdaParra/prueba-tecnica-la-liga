@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
-import { getUsers } from '../api/index';
+import { getUsers } from '../api/users';
 import * as actions from '../store/actions';
 import { Button } from 'components/Button';
 import { Card, Cards, CardText, CardTitle } from 'components/Cards';
