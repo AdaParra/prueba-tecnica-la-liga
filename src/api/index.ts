@@ -1,4 +1,4 @@
-export const loginWith = async function(email: string, password: string): Promise<void> {
+export const loginWith = async function(email: string, password: string): Promise<number> {
     const response = await fetch(`https://reqres.in/api/login`, {
       method: 'POST',
       headers: {
@@ -6,11 +6,11 @@ export const loginWith = async function(email: string, password: string): Promis
       },
       body: JSON.stringify({email, password})
     });
-
     if(response?.ok){
         const { token } = await response.json();
-        sessionStorage.setItem('token', JSON.stringify(token));
+        localStorage.setItem('token', JSON.stringify(token));
     }
+    return response.status;
 }
 
 export const getUsers = async function (page: number) {

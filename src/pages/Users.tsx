@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { getUsers } from '../api/index';
@@ -9,27 +9,27 @@ export default function Users() {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const users = useSelector((state: RootState) => state.reducerUserList);
+    const dataUsers = useSelector((state: RootState) => state.reducerUserList);
 
     const getUserList = async (page) => {
-        const userList = await getUsers(page);
-        dispatch(actions.actionUserList(userList));
+        const apiUsers = await getUsers(page);
+        dispatch(actions.actionUserList(apiUsers));
     }
 
     const nextPage = () => {
-        if (users.total_pages >= users.page + 1) {
-            getUserList(users.page + 1);
+        if (dataUsers.total_pages >= dataUsers.page + 1) {
+            getUserList(dataUsers.page + 1);
         }
     }
 
     const prevPage = () => {
-        if (users.page - 1 > 0) {
-            getUserList(users.page - 1);
+        if (dataUsers.page - 1 > 0) {
+            getUserList(dataUsers.page - 1);
         }
     }
 
     const logOut = () => {
-        sessionStorage.removeItem('token');
+        localStorage.removeItem('token');
         navigate('/login');
     }
 
@@ -50,7 +50,7 @@ export default function Users() {
                         <td>Email</td>
                     </tr>
                     {
-                        users?.data?.map((user, index) => (
+                        dataUsers?.data?.map((user, index) => (
                             <tr key={index}>
                                 <td><img alt={user.first_name} src={user.avatar} /></td>
                                 <td>{user.first_name}</td>
