@@ -25,7 +25,7 @@ describe("users.ts", () => {
             total: 20,
             total_pages: 40
         }
-        global.fetch = mockFetchApiWith(usersInfo)
+         mockFetchApiWith(usersInfo)
 
         const numberOfPages = 6
         const returnedResult = await getUsers(numberOfPages)
@@ -38,8 +38,8 @@ describe("users.ts", () => {
     })
 })
 
-function mockFetchApiWith(usersInfo: UsersInformation): (input: RequestInfo, init?: RequestInit | undefined) => Promise<Response> {
-    return jest.fn(() => Promise.resolve({
+function mockFetchApiWith(usersInfo: UsersInformation): void {
+    global.fetch = jest.fn(() => Promise.resolve({
         json: () => Promise.resolve(usersInfo),
         headers: new Headers(),
         ok: false,
