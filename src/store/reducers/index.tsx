@@ -6,7 +6,7 @@ interface User {
     last_name: string
 }
 
-export interface UserList {
+export interface RootState {
     data: Array<User>,
     page: number,
     per_page: number,
@@ -14,7 +14,7 @@ export interface UserList {
     total_pages: number
 };
 
-const initialState: UserList = {
+const initialState: RootState = {
     data: [],
     page: 0,
     per_page: 0,
@@ -22,7 +22,7 @@ const initialState: UserList = {
     total_pages: 0
 };
 
-export const reducerUserList = (state: UserList = initialState, action) => {
+export const reducerUserList = (state: RootState = initialState, action) => {
     switch (action.type) {
     case 'USER_LIST': {
         const { data, page, per_page, total, total_pages } = action.payload;
