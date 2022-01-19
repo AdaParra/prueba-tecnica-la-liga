@@ -4,28 +4,8 @@ import { getUsers } from "./users"
 
 describe("users.ts", () => {
     test("get users correctly", async () => {
-        const users: Array<User> = [{
-            avatar: "anyAvatar",
-            email: "any@email.com",
-            first_name: "anyFirstName",
-            id: 4,
-            last_name: "anyLastName"
-        },
-        {
-            avatar: "anyOtherAvatar",
-            email: "anyOther@email.com",
-            first_name: "anyOtherFirstName",
-            id: 7,
-            last_name: "anyOtherLastName"
-        }]
-        const usersInfo: UsersInformation = {
-            data: users,
-            page: 2,
-            per_page: 1,
-            total: 20,
-            total_pages: 40
-        }
-         mockFetchApiWith(usersInfo)
+        const usersInfo: UsersInformation = givenUsersInformation()
+        mockFetchApiWith(usersInfo)
 
         const numberOfPages = 6
         const returnedResult = await getUsers(numberOfPages)
@@ -37,6 +17,31 @@ describe("users.ts", () => {
         expect(returnedResult).toEqual(usersInfo)
     })
 })
+
+function givenUsersInformation(): UsersInformation {
+    const users: Array<User> = [{
+        avatar: "anyAvatar",
+        email: "any@email.com",
+        first_name: "anyFirstName",
+        id: 4,
+        last_name: "anyLastName"
+    },
+    {
+        avatar: "anyOtherAvatar",
+        email: "anyOther@email.com",
+        first_name: "anyOtherFirstName",
+        id: 7,
+        last_name: "anyOtherLastName"
+    }]
+    const usersInfo: UsersInformation = {
+        data: users,
+        page: 2,
+        per_page: 1,
+        total: 20,
+        total_pages: 40
+    }
+    return usersInfo
+}
 
 function mockFetchApiWith(usersInfo: UsersInformation): void {
     global.fetch = jest.fn(() => Promise.resolve({
