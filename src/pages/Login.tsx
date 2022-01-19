@@ -13,8 +13,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [showMessageUnauthorized, setshowMessageUnauthorized] = useState(false);
     
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async () => {
         const HttpStatusCodes = await loginWith(email, password);
         if (HttpStatusCodes === 200) {
             navigate('/users');
