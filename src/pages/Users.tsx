@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { getUsers } from '../api/index';
 import * as actions from '../store/actions';
+import { Button } from 'components/Button';
+import { Card, Cards, CardText, CardTitle } from 'components/Cards';
 
 export default function Users() {
 
@@ -41,34 +43,25 @@ export default function Users() {
 
     return (
         <>
-            <button onClick={logOut}>Cerrar Sesión</button>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Avatar</td>
-                        <td>Firt Name</td>
-                        <td>Last Name</td>
-                        <td>Email</td>
-                    </tr>
-                    {
-                        dataUsers?.data?.map((user, index) => (
-                            <tr key={index}>
-                                <td><img alt={user.first_name} src={user.avatar} /></td>
-                                <td>{user.first_name}</td>
-                                <td>{user.last_name}</td>
-                                <td>{user.email}</td>
-                            </tr>
-                        ))
-                    }
-                    
-                </tbody>
-            </table>
-            <button onClick={prevPage}>
+            <Button onClick={logOut}>Cerrar Sesión</Button>
+            <Cards>
+                {
+                    dataUsers?.data?.map((user, index) => (
+                        <Card key={index}>
+                            <img alt={user.first_name} src={user.avatar} />
+                            <CardTitle>{user.first_name}</CardTitle>
+                            <CardText>{user.last_name}</CardText>
+                            <CardText>{user.email}</CardText>
+                        </Card>
+                    ))
+                }
+            </Cards>
+            <Button onClick={prevPage}>
                 anterior
-            </button>
-            <button onClick={nextPage}>
+            </Button>
+            <Button onClick={nextPage}>
                 siguiente
-            </button>
+            </Button>
         </>
     )
 }
