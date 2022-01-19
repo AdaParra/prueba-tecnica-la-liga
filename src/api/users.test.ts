@@ -15,7 +15,10 @@ describe("users.ts", () => {
         const numberOfPages = 6
         getUsers(numberOfPages)
 
-        expect(global.fetch).toHaveBeenCalled()
+        expect(global.fetch).toHaveBeenCalledWith(
+            `https://reqres.in/api/users?page=${numberOfPages}`,
+            {"headers": {"Content-Type": "application/json"}, "method": "GET"}
+        )
     })
 })
 
