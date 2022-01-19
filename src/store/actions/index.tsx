@@ -4,3 +4,7 @@ export const actionUserList = users => (
       payload: users
     }
 )
+
+export const actionResetUserList = () => ({
+  type: 'RESET_USER_LIST'
+})

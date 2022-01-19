@@ -30,6 +30,7 @@ export default function Users() {
 
     const logOut = () => {
         localStorage.removeItem('token');
+        dispatch(actions.actionResetUserList());
         navigate('/login');
     }
 

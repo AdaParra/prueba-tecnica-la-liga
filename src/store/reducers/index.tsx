@@ -35,6 +35,11 @@ export const reducerUserList = (state: UserList = initialState, action) => {
             total_pages
         }
     }
+    case 'RESET_USER_LIST' : {
+        return {
+            ...initialState
+        }
+    }
     default:
         return state;
     }
