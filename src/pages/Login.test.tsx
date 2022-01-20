@@ -19,8 +19,8 @@ describe('Login.tsx', () => {
     const passwordInput = getByLabelText('password');
     const submitButton = getByRole('button');
     expect(loginTitle).toBeInTheDocument();
-    expect(emailInput).toBeInTheDocument();
-    expect(passwordInput).toBeInTheDocument();
+    expect(emailInput).toHaveAttribute('placeholder', 'Email');
+    expect(passwordInput).toHaveAttribute('placeholder', 'Contraseña');
     expect(submitButton).toHaveTextContent('Iniciar Sesión');
   });
 });
