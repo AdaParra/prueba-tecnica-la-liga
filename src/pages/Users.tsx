@@ -11,7 +11,7 @@ export default function Users() {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const dataUsers = useSelector((state: RootState) => state.reducerUserList);
+    const users = useSelector((state: RootState) => state.reducerUserList);
 
     const getUserList = async (page) => {
         const apiUsers = await getUsers(page);
@@ -19,14 +19,14 @@ export default function Users() {
     }
 
     const nextPage = () => {
-        if (dataUsers.total_pages >= dataUsers.page + 1) {
-            getUserList(dataUsers.page + 1);
+        if (users.totalOfPages >= users.numberOfPages + 1) {
+            getUserList(users.numberOfPages + 1);
         }
     }
 
     const prevPage = () => {
-        if (dataUsers.page - 1 > 0) {
-            getUserList(dataUsers.page - 1);
+        if (users.numberOfPages - 1 > 0) {
+            getUserList(users.numberOfPages - 1);
         }
     }
 
@@ -46,11 +46,11 @@ export default function Users() {
             <Button onClick={logOut}>Cerrar Sesión</Button>
             <Cards>
                 {
-                    dataUsers?.data?.map((user, index) => (
+                    users?.userList?.map((user, index) => (
                         <Card key={index}>
-                            <img alt={user.first_name} src={user.avatar} />
-                            <CardTitle>{user.first_name}</CardTitle>
-                            <CardText>{user.last_name}</CardText>
+                            <img alt={user.firstName} src={user.avatar} />
+                            <CardTitle>{user.firstName}</CardTitle>
+                            <CardText>{user.lastName}</CardText>
                             <CardText>{user.email}</CardText>
                         </Card>
                     ))

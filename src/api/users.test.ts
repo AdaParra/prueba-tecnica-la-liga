@@ -22,23 +22,21 @@ function givenUsersInformation(): UsersInformation {
     const users: Array<User> = [{
         avatar: "anyAvatar",
         email: "any@email.com",
-        first_name: "anyFirstName",
+        firstName: "anyFirstName",
         id: 4,
-        last_name: "anyLastName"
+        lastName: "anyLastName"
     },
     {
         avatar: "anyOtherAvatar",
         email: "anyOther@email.com",
-        first_name: "anyOtherFirstName",
+        firstName: "anyOtherFirstName",
         id: 7,
-        last_name: "anyOtherLastName"
+        lastName: "anyOtherLastName"
     }]
     const usersInfo: UsersInformation = {
-        data: users,
-        page: 2,
-        per_page: 1,
-        total: 20,
-        total_pages: 40
+        userList: users,
+        numberOfPages: 2,
+        totalOfPages: 1,
     }
     return usersInfo
 }
