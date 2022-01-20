@@ -1,5 +1,5 @@
 import React from 'react';
-import RouteConfiguration from 'routes';
+import RouteConfiguration from './routes';
 
 function App() {
   return (
