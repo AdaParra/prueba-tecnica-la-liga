@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { loginWith } from "../api/authentication";
 import { Button } from 'components/Button';
-import { Input, Label } from 'components/Input';
+import { Input } from 'components/Input';
 import { Container } from 'components/Container';
 import { Title } from 'components/Title';
 import { InfoText } from 'components/InfoText';
