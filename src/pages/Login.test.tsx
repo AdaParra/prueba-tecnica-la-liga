@@ -5,9 +5,13 @@ import { createMemoryHistory } from 'history';
 import Login from './Login';
 
 describe('Login.tsx', () => {
-  test('shows the title correctly', () => {
-    const history = createMemoryHistory();
+  let history;
 
+  beforeAll(() => {
+    history = createMemoryHistory();
+  });
+
+  test('shows the title correctly', () => {
     const { getByText } = render(
       <Router location={history.location} navigator={history}>
         <Login />
@@ -19,8 +23,6 @@ describe('Login.tsx', () => {
   });
 
   test('shows the email input correctly', () => {
-    const history = createMemoryHistory();
-
     const { getByLabelText } = render(
       <Router location={history.location} navigator={history}>
         <Login />
@@ -33,8 +35,6 @@ describe('Login.tsx', () => {
   });
 
   test('shows the password input correctly', () => {
-    const history = createMemoryHistory();
-
     const { getByLabelText } = render(
       <Router location={history.location} navigator={history}>
         <Login />
@@ -46,8 +46,6 @@ describe('Login.tsx', () => {
   });
 
   test('shows the submit button correctly', () => {
-    const history = createMemoryHistory();
-
     const { getByRole } = render(
       <Router location={history.location} navigator={history}>
         <Login />
