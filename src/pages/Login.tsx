@@ -6,7 +6,7 @@ import { Input } from 'components/Input';
 import { Container } from 'components/Container';
 import { Title } from 'components/Title';
 import { InfoText } from 'components/InfoText';
-import { getLocalStorageItem } from 'storage/localStorage';
+import { getAuthenticationToken } from 'storage/localStorage';
 
 export default function Login() {
     const navigate = useNavigate();
@@ -22,8 +22,8 @@ export default function Login() {
             setshowMessageUnauthorized(true);
         }
     }
-
-    if (getLocalStorageItem('token')) {
+    const tokenExists = getAuthenticationToken();
+    if (tokenExists) {
         return <Navigate to='/users' />
     }
 

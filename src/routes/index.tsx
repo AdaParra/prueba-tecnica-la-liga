@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "pages/Login";
 import Users from "pages/Users";
 import NotFound from "pages/NotFound";
-import { getLocalStorageItem } from 'storage/localStorage';
+import { getAuthenticationToken } from 'storage/localStorage';
 
 function PrivateRoute({ children }) {
-    const auth = getLocalStorageItem('token');
-    return auth ? children : <Navigate to="/login" />;
+    const tokenExists = getAuthenticationToken();
+    return tokenExists ? children : <Navigate to="/login" />;
   }
 
 export default function RouteConfiguration() {

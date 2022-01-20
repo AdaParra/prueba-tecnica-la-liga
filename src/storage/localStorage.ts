@@ -1,9 +1,11 @@
-export const getLocalStorageItem = (key: string): any => {
-    return localStorage.getItem(key);
+const tokenName = 'token';
+
+export const getAuthenticationToken = (): any => {
+    return localStorage.getItem(tokenName);
 }
-export const setLocalStorageItem = (key: string, value: any): void  => {
-    localStorage.setItem(key, value);
+export const setAuthenticationToken = (value: any): void  => {
+    localStorage.setItem(tokenName, value);
 }
-export const removeLocalStorageItem = (key: string): void => {
-    localStorage.removeItem(key)
+export const removeAuthenticationToken = (): void => {
+    localStorage.removeItem(tokenName);
 }

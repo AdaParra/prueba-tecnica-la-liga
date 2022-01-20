@@ -1,4 +1,4 @@
-import { setLocalStorageItem } from "storage/localStorage";
+import { setAuthenticationToken } from "storage/localStorage";
 
 export const loginWith = async function (email: string, password: string): Promise<number> {
   const response = await fetch(`https://reqres.in/api/login`, {
@@ -10,7 +10,7 @@ export const loginWith = async function (email: string, password: string): Promi
   });
   if (response?.ok) {
     const { token } = await response.json();
-    setLocalStorageItem('token', JSON.stringify(token));
+    setAuthenticationToken(JSON.stringify(token));
   }
   return response.status;
 };
