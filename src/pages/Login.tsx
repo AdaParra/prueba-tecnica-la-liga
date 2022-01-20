@@ -32,8 +32,8 @@ export default function Login() {
       <Title>
         Proyecto LaLiga
       </Title>
-      <Input id="email" autoComplete="off" placeholder="Email" type="text" name="email" onChange={(e) => setEmail(e.target.value)} />
-      <Input autoComplete="off" id="password" placeholder="Password" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
+      <Input aria-label="email" id="email" autoComplete="off" placeholder="Email" type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
+      <Input aria-label="password" autoComplete="off" id="password" placeholder="Password" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
       <Button onClick={handleSubmit}>
         Iniciar Sesión
       </Button>
