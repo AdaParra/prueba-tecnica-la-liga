@@ -1,26 +1,28 @@
 import styled from "styled-components";
 import { colors } from "./Theme";
 
-export const Cards = styled.div`
+export const CardsContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
     grid-auto-flow: dense;
     grid-auto-rows: auto;
     grid-gap: 1rem;
 `;
 
-export const Card = styled.div`
+export const CardMedia = styled.img`
+    border-radius: 50%;
+    border: 8px groove ${colors.primary};
+    height: 126px;
+    width: 128px;
+`;
+
+
+export const CardContent = styled.div`
     border: 2px solid #F5F5F5;
     border-radius: 4px;
     padding: .5rem;
     text-align: center;
     background: #F5F5F5;
-`;
-
-export const CardBody = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
 `;
 
 export const CardTitle = styled.h3`

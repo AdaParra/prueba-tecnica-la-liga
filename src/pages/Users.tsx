@@ -5,7 +5,7 @@ import { RootState } from 'store';
 import { getUsers } from '../api/users';
 import * as actions from '../store/actions';
 import { Button } from 'components/Button';
-import { Card, Cards, CardText, CardTitle } from 'components/Cards';
+import { CardsContainer, CardContent, CardText, CardTitle, CardMedia } from 'components/Cards';
 import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
 import { removeAuthenticationToken } from 'storage/localStorage';
@@ -49,24 +49,24 @@ export default function Users() {
             <Header>
                 <Button onClick={logOut}>Cerrar Sesión</Button>
             </Header>
-            <Cards>
+            <CardsContainer>
                 {
                     users?.userList?.map((user, index) => (
-                        <Card key={index}>
-                            <img alt={user.firstName} src={user.avatar} />
+                        <CardContent key={index}>
+                            <CardMedia alt={user.firstName} src={user.avatar} />
                             <CardTitle>{user.firstName}</CardTitle>
                             <CardText>{user.lastName}</CardText>
                             <CardText>{user.email}</CardText>
-                        </Card>
+                        </CardContent>
                     ))
                 }
-            </Cards>
+            </CardsContainer>
             <Footer>
                 <Button onClick={prevPage}>
-                    anterior
+                    Anterior
                 </Button>
                 <Button onClick={nextPage}>
-                    siguiente
+                    Siguiente
                 </Button>
             </Footer>
         </>
