@@ -2,10 +2,10 @@ import React from 'react';
 import {
   BrowserRouter, Routes, Route, Navigate,
 } from 'react-router-dom';
-import Login from 'pages/Login';
-import Users from 'pages/Users';
-import NotFound from 'pages/NotFound';
-import { getAuthenticationToken } from 'storage/localStorage';
+import Login from '../pages/Login';
+import Users from '../pages/Users';
+import NotFound from '../pages/NotFound';
+import { getAuthenticationToken } from '../storage/localStorage';
 
 function PrivateRoute({ children }) {
   const tokenExists = getAuthenticationToken();
