@@ -6,7 +6,7 @@ import { Input } from 'components/Input';
 import { Container } from 'components/Container';
 import { Title } from 'components/Title';
 import { InfoText } from 'components/InfoText';
-import { getLocalStorageItem } from 'store/localStorage';
+import { getLocalStorageItem } from 'storage/localStorage';
 
 export default function Login() {
     const navigate = useNavigate();

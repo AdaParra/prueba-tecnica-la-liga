@@ -8,7 +8,7 @@ import { Button } from 'components/Button';
 import { Card, Cards, CardText, CardTitle } from 'components/Cards';
 import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
-import { removeLocalStorageItem } from 'store/localStorage';
+import { removeLocalStorageItem } from 'storage/localStorage';
 
 export default function Users() {
 

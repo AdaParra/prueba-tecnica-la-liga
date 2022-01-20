@@ -1,4 +1,4 @@
-import { setLocalStorageItem } from "store/localStorage";
+import { setLocalStorageItem } from "storage/localStorage";
 
 export const loginWith = async function (email: string, password: string): Promise<number> {
   const response = await fetch(`https://reqres.in/api/login`, {
