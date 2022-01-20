@@ -1,7 +1,7 @@
 import { setAuthenticationToken } from "storage/localStorage";
 
 export const loginWith = async function (email: string, password: string): Promise<number> {
-  const response = await fetch(`https://reqres.in/api/login`, {
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
