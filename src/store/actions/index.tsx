@@ -1,10 +1,10 @@
-export const actionUserList = users => (
-    {
-      type: 'USER_INFORMATION',
-      payload: users
-    }
-)
+export const actionUserList = (users) => (
+  {
+    type: 'USER_INFORMATION',
+    payload: users,
+  }
+);
 
 export const actionResetUserList = () => ({
-  type: 'RESET_USER_INFORMATION'
-})
+  type: 'RESET_USER_INFORMATION',
+});

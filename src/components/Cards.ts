@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "./Theme";
+import styled from 'styled-components';
+import { colors } from './Theme';
 
 export const CardsContainer = styled.div`
     display: grid;
@@ -15,7 +15,6 @@ export const CardMedia = styled.img`
     height: 126px;
     width: 128px;
 `;
-
 
 export const CardContent = styled.div`
     border: 2px solid #F5F5F5;
@@ -33,4 +32,3 @@ export const CardTitle = styled.h3`
 export const CardText = styled.p`
     color: '#808080';
 `;
-

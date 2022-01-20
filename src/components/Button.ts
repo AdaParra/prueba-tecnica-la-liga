@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "./Theme";
+import styled from 'styled-components';
+import { colors } from './Theme';
 
 export const Button = styled.button`
     font-size: 1em;
@@ -17,4 +17,4 @@ export const Button = styled.button`
         border: 2px solid ${colors.secondary};
         color: white;
     }
-`
+`;

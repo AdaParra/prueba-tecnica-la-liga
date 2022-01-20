@@ -1,12 +1,12 @@
-import { setAuthenticationToken } from "storage/localStorage";
+import { setAuthenticationToken } from '../storage/localStorage';
 
-export const loginWith = async function (email: string, password: string): Promise<number> {
+export const loginWith = async (email: string, password: string): Promise<number> => {
   const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/login`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email, password })
+    body: JSON.stringify({ email, password }),
   });
   if (response?.ok) {
     const { token } = await response.json();
