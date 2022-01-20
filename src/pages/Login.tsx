@@ -31,9 +31,7 @@ export default function Login() {
             <Title>
                 Proyecto LaLiga
             </Title>
-            <Label htmlFor='email'>Email: </Label>
             <Input id='email' autoComplete='off' placeholder='Email' type='text' name='email' onChange={ e => setEmail(e.target.value) } />
-            <Label htmlFor='password'>Contraseña: </Label>
             <Input autoComplete='off' id='password' placeholder='Password' type='password' name='password' onChange={e => setPassword(e.target.value) } />
             <Button onClick={handleSubmit}>
                 Iniciar Sesión

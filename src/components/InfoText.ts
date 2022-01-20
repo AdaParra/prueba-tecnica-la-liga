@@ -3,7 +3,6 @@ import { colors } from "./Theme";
 
 export const InfoText = styled.p`
   font-size: 1em;
-  color: #FFA500;
+  color: red;
   text-align: center;
-
 `;

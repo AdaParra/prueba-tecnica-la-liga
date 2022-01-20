@@ -3,6 +3,7 @@ import { colors } from "./Theme";
 
 export const Button = styled.button`
     font-size: 1em;
+    justify-self: center;
     margin: 1em;
     padding: .5rem;
     border: 2px solid ${colors.primary};
@@ -16,5 +17,4 @@ export const Button = styled.button`
         border: 2px solid ${colors.secondary};
         color: white;
     }
-    justify-self: center;
 `

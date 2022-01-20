@@ -6,6 +6,8 @@ import { getUsers } from '../api/users';
 import * as actions from '../store/actions';
 import { Button } from 'components/Button';
 import { Card, Cards, CardText, CardTitle } from 'components/Cards';
+import { Header } from 'components/Header';
+import { Footer } from 'components/Footer';
 
 export default function Users() {
 
@@ -43,7 +45,9 @@ export default function Users() {
 
     return (
         <>
-            <Button onClick={logOut}>Cerrar Sesión</Button>
+            <Header>
+                <Button onClick={logOut}>Cerrar Sesión</Button>
+            </Header>
             <Cards>
                 {
                     users?.userList?.map((user, index) => (
@@ -56,12 +60,14 @@ export default function Users() {
                     ))
                 }
             </Cards>
-            <Button onClick={prevPage}>
-                anterior
-            </Button>
-            <Button onClick={nextPage}>
-                siguiente
-            </Button>
+            <Footer>
+                <Button onClick={prevPage}>
+                    anterior
+                </Button>
+                <Button onClick={nextPage}>
+                    siguiente
+                </Button>
+            </Footer>
         </>
     )
 }
