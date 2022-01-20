@@ -20,6 +20,7 @@ describe('Login.tsx', () => {
     const submitButton = getByRole('button');
     expect(loginTitle).toBeInTheDocument();
     expect(emailInput).toHaveAttribute('placeholder', 'Email');
+    expect(emailInput).toHaveAttribute('type', 'email');
     expect(passwordInput).toHaveAttribute('placeholder', 'Contraseña');
     expect(submitButton).toHaveTextContent('Iniciar Sesión');
   });
