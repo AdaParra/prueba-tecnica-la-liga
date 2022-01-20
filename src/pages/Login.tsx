@@ -6,6 +6,7 @@ import { Input } from 'components/Input';
 import { Container } from 'components/Container';
 import { Title } from 'components/Title';
 import { InfoText } from 'components/InfoText';
+import { getLocalStorageItem } from 'store/localStorage';
 
 export default function Login() {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function Login() {
         }
     }
 
-    if (localStorage.getItem('token')) {
+    if (getLocalStorageItem('token')) {
         return <Navigate to='/users' />
     }
 

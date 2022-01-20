@@ -8,6 +8,7 @@ import { Button } from 'components/Button';
 import { Card, Cards, CardText, CardTitle } from 'components/Cards';
 import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
+import { removeLocalStorageItem } from 'store/localStorage';
 
 export default function Users() {
 
@@ -33,7 +34,7 @@ export default function Users() {
     }
 
     const logOut = () => {
-        localStorage.removeItem('token');
+        removeLocalStorageItem('token');
         dispatch(actions.actionResetUserList());
         navigate('/login');
     }
