@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
-import { Button } from 'components/Button';
-import { Input } from 'components/Input';
-import { Container } from 'components/Container';
-import { Title } from 'components/Title';
-import { InfoText } from 'components/InfoText';
-import { getAuthenticationToken } from 'storage/localStorage';
+import { Input } from '../components/Input';
+import { Button } from '../components/Button';
+import { Container } from '../components/Container';
+import { Title } from '../components/Title';
+import { InfoText } from '../components/InfoText';
+import { getAuthenticationToken } from '../storage/localStorage';
 import { loginWith } from '../api/authentication';
 
 export default function Login() {
