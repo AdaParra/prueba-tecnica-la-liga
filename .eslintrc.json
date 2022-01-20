@@ -1,7 +1,15 @@
 {
+    "settings": {
+        "import/resolver": {
+            "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest/globals": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -17,8 +25,21 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "jest"
     ],
     "rules": {
-    }
+    },
+    "overrides": [
+        {
+          "files": ["*.ts","*.tsx"],
+          "rules": {
+            "import/extensions": "off",
+            "import/prefer-default-export": "off",
+            "no-use-before-define": "off",
+            "default-param-last": "off",
+            "camelcase": "off"
+          }
+        }
+      ]
 }
