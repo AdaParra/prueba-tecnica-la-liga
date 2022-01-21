@@ -1,11 +1,9 @@
-import React from 'react';
-import {
-  BrowserRouter, Routes, Route, Navigate,
-} from 'react-router-dom';
-import Login from '../pages/Login';
-import Users from '../pages/Users';
-import NotFound from '../pages/NotFound';
-import { getAuthenticationToken } from '../storage/localStorage';
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Login from "../pages/Login";
+import Users from "../pages/Users";
+import NotFound from "../pages/NotFound";
+import { getAuthenticationToken } from "../storage/localStorage";
 
 function PrivateRoute({ children }) {
   const tokenExists = getAuthenticationToken();
@@ -20,11 +18,11 @@ export default function RouteConfiguration() {
         <Route path="/login" element={<Login />} />
         <Route
           path="/users"
-          element={(
+          element={
             <PrivateRoute>
               <Users />
             </PrivateRoute>
-                  )}
+          }
         />
         <Route path="*" element={<NotFound />} />
       </Routes>

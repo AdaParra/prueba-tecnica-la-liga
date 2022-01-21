@@ -1,58 +1,58 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import Login from './Login';
+import React from "react";
+import { render } from "@testing-library/react";
+import { Router } from "react-router-dom";
+import { createMemoryHistory } from "history";
+import Login from "./Login";
 
-describe('Login.tsx', () => {
+describe("Login.tsx", () => {
   let history;
 
   beforeAll(() => {
     history = createMemoryHistory();
   });
 
-  test('shows the title correctly', () => {
+  test("shows the title correctly", () => {
     const { getByText } = render(
       <Router location={history.location} navigator={history}>
         <Login />
-      </Router>,
+      </Router>
     );
 
     const loginTitle = getByText(/Proyecto LaLiga/);
     expect(loginTitle).toBeInTheDocument();
   });
 
-  test('shows the email input correctly', () => {
+  test("shows the email input correctly", () => {
     const { getByLabelText } = render(
       <Router location={history.location} navigator={history}>
         <Login />
-      </Router>,
+      </Router>
     );
 
-    const emailInput = getByLabelText('email');
-    expect(emailInput).toHaveAttribute('placeholder', 'Email');
-    expect(emailInput).toHaveAttribute('type', 'email');
+    const emailInput = getByLabelText("email");
+    expect(emailInput).toHaveAttribute("placeholder", "Email");
+    expect(emailInput).toHaveAttribute("type", "email");
   });
 
-  test('shows the password input correctly', () => {
+  test("shows the password input correctly", () => {
     const { getByLabelText } = render(
       <Router location={history.location} navigator={history}>
         <Login />
-      </Router>,
+      </Router>
     );
 
-    const passwordInput = getByLabelText('password');
-    expect(passwordInput).toHaveAttribute('placeholder', 'Contraseña');
+    const passwordInput = getByLabelText("password");
+    expect(passwordInput).toHaveAttribute("placeholder", "Contraseña");
   });
 
-  test('shows the submit button correctly', () => {
+  test("shows the submit button correctly", () => {
     const { getByRole } = render(
       <Router location={history.location} navigator={history}>
         <Login />
-      </Router>,
+      </Router>
     );
 
-    const submitButton = getByRole('button');
-    expect(submitButton).toHaveTextContent('Iniciar Sesión');
+    const submitButton = getByRole("button");
+    expect(submitButton).toHaveTextContent("Iniciar Sesión");
   });
 });

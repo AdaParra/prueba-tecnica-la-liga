@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { removeAuthenticationToken } from '../storage/localStorage';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { removeAuthenticationToken } from "../storage/localStorage";
 import {
-  CardsContainer, CardContent, CardText, CardTitle, CardMedia,
-} from '../components/Cards';
-import { Button } from '../components/Button';
-import { RootState } from '../store';
-import * as actions from '../store/actions';
-import { getUsers } from '../api/users';
+  CardsContainer,
+  CardContent,
+  CardText,
+  CardTitle,
+  CardMedia,
+} from "../components/Cards";
+import { Button } from "../components/Button";
+import { RootState } from "../store";
+import * as actions from "../store/actions";
+import { getUsers } from "../api/users";
 
 export default function Users() {
   const navigate = useNavigate();
@@ -37,7 +41,7 @@ export default function Users() {
   const logOut = () => {
     removeAuthenticationToken();
     dispatch(actions.actionResetUserList());
-    navigate('/login');
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -51,24 +55,18 @@ export default function Users() {
         <Button onClick={logOut}>Cerrar Sesión</Button>
       </Header>
       <CardsContainer>
-        {
-                    users?.userList?.map((user) => (
-                      <CardContent key={user.id}>
-                        <CardMedia alt={user.firstName} src={user.avatar} />
-                        <CardTitle>{user.firstName}</CardTitle>
-                        <CardText>{user.lastName}</CardText>
-                        <CardText>{user.email}</CardText>
-                      </CardContent>
-                    ))
-                }
+        {users?.userList?.map((user) => (
+          <CardContent key={user.id}>
+            <CardMedia alt={user.firstName} src={user.avatar} />
+            <CardTitle>{user.firstName}</CardTitle>
+            <CardText>{user.lastName}</CardText>
+            <CardText>{user.email}</CardText>
+          </CardContent>
+        ))}
       </CardsContainer>
       <Footer>
-        <Button onClick={prevPage}>
-          Anterior
-        </Button>
-        <Button onClick={nextPage}>
-          Siguiente
-        </Button>
+        <Button onClick={prevPage}>Anterior</Button>
+        <Button onClick={nextPage}>Siguiente</Button>
       </Footer>
     </>
   );

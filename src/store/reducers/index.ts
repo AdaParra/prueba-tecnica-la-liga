@@ -1,5 +1,5 @@
-import { User } from '../../types/User';
-import { UsersInformation } from '../../types/UsersInformation';
+import { User } from "../../types/User";
+import { UsersInformation } from "../../types/UsersInformation";
 
 const convertDataToUser = (data) => {
   const users = data.map((userElement) => {
@@ -21,9 +21,12 @@ const initialState: UsersInformation = {
   totalOfPages: 0,
 };
 
-export const reducerUserList = (state: UsersInformation = initialState, action) => {
+export const reducerUserList = (
+  state: UsersInformation = initialState,
+  action
+) => {
   switch (action.type) {
-    case 'USER_INFORMATION': {
+    case "USER_INFORMATION": {
       const { data, page, total_pages } = action.payload;
       return {
         ...state,
@@ -32,7 +35,7 @@ export const reducerUserList = (state: UsersInformation = initialState, action) 
         totalOfPages: total_pages,
       };
     }
-    case 'RESET_USER_INFORMATION': {
+    case "RESET_USER_INFORMATION": {
       return {
         ...initialState,
       };

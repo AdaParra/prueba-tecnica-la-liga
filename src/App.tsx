@@ -1,10 +1,8 @@
-import React from 'react';
-import RouteConfiguration from './routes';
+import React from "react";
+import RouteConfiguration from "./routes";
 
 function App() {
-  return (
-    <RouteConfiguration />
-  );
+  return <RouteConfiguration />;
 }
 
 export default App;
