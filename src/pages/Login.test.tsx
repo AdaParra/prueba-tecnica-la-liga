@@ -31,6 +31,7 @@ describe("Login.tsx", () => {
 
     const emailInput = getByLabelText("email");
     expect(emailInput).toHaveAttribute("placeholder", "Email");
+    expect(emailInput).toHaveDisplayValue("");
     expect(emailInput).toHaveAttribute("type", "email");
   });
 
@@ -43,6 +44,8 @@ describe("Login.tsx", () => {
 
     const passwordInput = getByLabelText("password");
     expect(passwordInput).toHaveAttribute("placeholder", "Contraseña");
+    expect(passwordInput).toHaveDisplayValue("");
+    expect(passwordInput).toHaveAttribute("type", "password");
   });
 
   test("shows the submit button correctly", () => {
