@@ -16,6 +16,9 @@ Para instalación de dependencias
 ### `npm start`
 Entorno de desarrollo
 
+Debe crear un archivo .env en el directorio raíz de la aplicación y agregue la variable
+REACT_APP_API_BASE_URL=https://reqres.in/api
+
 ## Memoria
 
 *** Puedes documentar aquí la memoria de tu prueba ***
