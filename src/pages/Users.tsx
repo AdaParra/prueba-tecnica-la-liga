@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from 'store';
-import { Button } from 'components/Button';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+import { removeAuthenticationToken } from '../storage/localStorage';
 import {
   CardsContainer, CardContent, CardText, CardTitle, CardMedia,
-} from 'components/Cards';
-import { Header } from 'components/Header';
-import { Footer } from 'components/Footer';
-import { removeAuthenticationToken } from 'storage/localStorage';
+} from '../components/Cards';
+import { Button } from '../components/Button';
+import { RootState } from '../store';
 import * as actions from '../store/actions';
 import { getUsers } from '../api/users';
 
@@ -52,8 +52,8 @@ export default function Users() {
       </Header>
       <CardsContainer>
         {
-                    users?.userList?.map((user, index) => (
-                      <CardContent key={index}>
+                    users?.userList?.map((user) => (
+                      <CardContent key={user.id}>
                         <CardMedia alt={user.firstName} src={user.avatar} />
                         <CardTitle>{user.firstName}</CardTitle>
                         <CardText>{user.lastName}</CardText>

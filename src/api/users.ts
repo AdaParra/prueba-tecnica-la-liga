@@ -1,11 +1,12 @@
-import { UsersInformation } from 'types/UsersInformation';
+import { UsersInformation } from '../types/UsersInformation';
 
-export const getUsers = async function (numberOfPages: number): Promise<UsersInformation> {
-  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users?page=${numberOfPages}`, {
+export const getUsers = async (numberOfPages: number): Promise<UsersInformation> => {
+  const request = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users?page=${numberOfPages}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   });
-  return await response.json();
+  const response = await request.json();
+  return response;
 };
