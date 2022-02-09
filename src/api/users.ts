@@ -1,4 +1,19 @@
+import { User } from "../types/User";
 import { UserInformationFromApi } from "../types/UsersInformation";
+
+export const convertDataToUser = (data) => {
+  const users = data.map((userElement) => {
+    const user: User = {
+      avatar: userElement.avatar,
+      email: userElement.email,
+      firstName: userElement.first_name,
+      lastName: userElement.last_name,
+      id: userElement.id,
+    };
+    return user;
+  });
+  return users;
+};
 
 export const getUsers = async (
   numberOfPages: number
